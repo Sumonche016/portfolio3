@@ -1,0 +1,85 @@
+@keyframes type {
+    0% {
+        width: 0ch;
+    }
+    100% {
+        width: 7.1ch;
+    }
+}
+
+@keyframes failure {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        opacity: 0;
+        // transform: scale(.5);
+        transform: translateY(80px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(3rem);
+    }
+    100% {
+        opacity: 1;
+        // transform: scale(.5);
+        transform: translateY(0);
+    }
+}
+
+@keyframes image-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes image-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        transform: scale(.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-under {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ====this is mixin ++++===
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

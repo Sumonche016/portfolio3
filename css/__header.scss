@@ -1,0 +1,221 @@
+header {
+    //   background-image: url("../image/bg1\ \(3\).jpg");
+    background-size: cover;
+    width: 100%;
+    height: 95vh;
+    position: relative;
+    color: $header-font-color;
+    // background-image: linear-gradient(to right, rgba($next-color1, .97), rgba($next-color2, .97)), url('../image/nat4.jpg');
+    //   background-image: linear-gradient(to bottom, #1e1d41f1, #1e1d41fb), url('../image/nat4.jpg');
+    //   background-color: $background;
+    // background-image: linear-gradient(to right, ), url('../image/nat4.jpg');
+    // background-image: linear-gradient(to right, $simanto-color1, $simanto-color2);
+    background: $simanto-color1;
+    background-position: center;
+    background-size: cover;
+    font-size: 16px;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    // this is for text-animation
+}
+
+.header-container {
+    width: 100%;
+    height: 7rem;
+    margin: auto;
+    background-color: transparent;
+    display: flex;
+    //   background-color: #0082e6;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    display: inline-block;
+    font-weight: 500;
+    padding: 18px 12px 0;
+}
+
+.left {
+    width: 24%;
+    ul {
+        float: left;
+        margin-right: 40px;
+        li {
+            display: inline-block;
+            padding: 18px 12px 0;
+            a {
+                transition: all .3s ease-in-out;
+                &:hover .fab {
+                    color: white;
+                    transform: translateY(-3px) scale(1.09);
+                    transition: transform .3s;
+                }
+            }
+            i {
+                color: $header-font-color;
+                font-size: 17px;
+                transition: .5s;
+            }
+        }
+    }
+}
+
+.right {
+    img {
+        padding: 0px 10px 3px 5px;
+        float: left;
+    }
+    ul {
+        float: right;
+        margin-left: 15px;
+        li {
+            position: relative;
+            padding-bottom: .8rem;
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 17px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.right ul .item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.17rem;
+    background: white;
+}
+
+.right ul .item::after {
+    transform: scale(0.01);
+    transition: transform .3s ease;
+}
+
+.right ul .item:hover::after {
+    transform: scale(1.1);
+}
+
+.menu {
+    display: none;
+    .fas {
+        color: white;
+        cursor: pointer;
+        font-size: 2.5rem;
+        margin-right: 1rem;
+        transform: translateY(12px);
+    }
+}
+
+// this is for animation
+.header-animation {
+    margin-top: 7rem;
+    padding-left: 10rem;
+    .top-text {
+        font-size: 17px;
+        color: #b0b0c2;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 500;
+    }
+}
+
+.wrapper {
+    display: flex;
+    // margin-top: 5rem;
+}
+
+.wrapper .static-txt {
+    color: #fff;
+    font-size: 74px;
+    font-weight: 600;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 28px;
+    height: 88px;
+    line-height: 92px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: $footer-center-color;
+    font-size: 69px;
+    font-weight: 600;
+    position: relative;
+    top: 0;
+    animation: slide 14s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $simanto-color1;
+    border-left: 2px solid black;
+    animation: typing 4s steps(10) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
+}
+
+//this is for mobile animation
+.heading-wrap {
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    display: none;
+    .failure {
+        font-size: 17px;
+        color: #b0b0c2;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 500;
+        display: inline-flex;
+        animation: failure 1s;
+        animation-delay: 3s;
+    }
+    h1 {
+        font-weight: 800;
+        font-size: 70px;
+        animation: zoom-in 1s;
+        animation-delay: 3s;
+        .color {
+            color: $footer-center-color;
+            font-size: 70px;
+            letter-spacing: normal;
+            font-weight: 800;
+            animation: type 2s steps(7) infinite;
+            border-right: 4px solid white;
+            width: 7ch;
+            overflow: hidden;
+            display: inline-flex;
+        }
+    }
+}

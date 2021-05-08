@@ -1,0 +1,74 @@
+footer {
+    padding: 1rem 0;
+    background-color: black;
+}
+
+.footer-container {
+    width: 97%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        h1 {
+            display: inline-block;
+            color: $header-font-color;
+            transform: translateY(-15px);
+        }
+    }
+    .footer-icon {
+        .round-div {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            margin: .8rem .5rem;
+            position: relative;
+            border: 2px solid $footer-text;
+            cursor: pointer;
+            transition: .4s;
+            backface-visibility: hidden;
+            transition: transform .3s;
+            &:hover {
+                transform: translateY(-3px) scale(1.01);
+                transition: .4s;
+                background-color: $footer-center-color;
+                border: none;
+            }
+            &:hover li a {
+                color: white;
+            }
+        }
+        ul {
+            display: inline-block;
+            li {
+                display: inline-block;
+                padding: 1rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: .5s;
+                a {
+                    color: $footer-text;
+                    transition: all .5s;
+                    transition: transform .3s;
+                    display: inline-block;
+                    backface-visibility: hidden;
+                    i {
+                        transition: .5s;
+                        display: inline-block;
+                        backface-visibility: hidden;
+                        transition: transform .3s;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+    .copywrite {
+        color: rgba(255, 255, 255, 0.445);
+        p {
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
+    }
+}
